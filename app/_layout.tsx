@@ -5,7 +5,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
-
+import {tokenCache} from "@/lib/auth"
 import { ClerkProvider, ClerkLoaded } from '@clerk/clerk-expo'
 import { Slot } from 'expo-router'
 
@@ -47,7 +47,7 @@ if (!publishableKey) {
   }
 
   return (
-        <ClerkProvider publishableKey={publishableKey}>
+        <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
           <ClerkLoaded>
       <Stack>
         <Stack.Screen name="(index)" options={{ headerShown: false }} />

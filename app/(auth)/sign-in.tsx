@@ -10,7 +10,6 @@ import { icons, images } from "@/constants";
 
 const SignIn = () => {
   const { signIn, setActive, isLoaded } = useSignIn();
-
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -29,15 +28,14 @@ const SignIn = () => {
         await setActive({ session: signInAttempt.createdSessionId });
         router.replace("/(root)/(tabs)/home");
       } else {
-        // See https://clerk.com/docs/custom-flows/error-handling for more info on error handling
         console.log(JSON.stringify(signInAttempt, null, 2));
         Alert.alert("Error", "Log in failed. Please try again.");
       }
     } catch (err: any) {
-      console.log(JSON.stringify(err, null, 2));
+      console.error(JSON.stringify(err, null, 2));
       Alert.alert("Error", err.errors[0].longMessage);
     }
-  }, [isLoaded, form]);
+  }, [isLoaded, form.email, form.password]);
 
   return (
     <ScrollView className="flex-1 bg-white">
