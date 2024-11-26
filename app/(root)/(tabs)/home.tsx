@@ -4,7 +4,7 @@ import { icons, images } from '@/constants'
 import { SignedIn, SignedOut, useUser } from '@clerk/clerk-expo'
 import { Link, router } from 'expo-router'
 import { SafeAreaView, Text, View, Image, ActivityIndicator, TouchableOpacity } from 'react-native'
-import { FlatList } from 'react-native-reanimated/lib/typescript/Animated'
+import { FlatList } from 'react-native'
 import Map from "@/components/Map";
 import { useLocationStore } from '@/store'
 import { useEffect, useState } from 'react'
