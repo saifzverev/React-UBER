@@ -2,7 +2,7 @@ import GoogleTextInput from '@/components/GoogleTextInput'
 import RideCard from '@/components/RideCard'
 import { icons, images } from '@/constants'
 import { SignedIn, SignedOut, useUser } from '@clerk/clerk-expo'
-import { Link } from 'expo-router'
+import { Link, router } from 'expo-router'
 import { SafeAreaView, Text, View, Image, ActivityIndicator, TouchableOpacity } from 'react-native'
 import { FlatList } from 'react-native-reanimated/lib/typescript/Animated'
 import Map from "@/components/Map";
@@ -123,7 +123,15 @@ const { setUserLocation, setDestinationLocation } = useLocationStore();
     
   const handleSignOut = () => {}
 
-  const handleDestinationPress = () => {};
+  const handleDestinationPress = (location: {
+    latitude: number;
+    longitude: number;
+    address: string;
+  }) => {
+    setDestinationLocation(location);
+
+    router.push("/(root)/find-ride");
+  };
 
 
   useEffect(() => {
@@ -142,8 +150,10 @@ const { setUserLocation, setDestinationLocation } = useLocationStore();
       });
 
       setUserLocation({
-        latitude: location.coords?.latitude,
-        longitude: location.coords?.longitude,
+       // latitude: location.coords?.latitude,
+       // longitude: location.coords?.longitude,
+        latitude: 37.78825,
+        longitude: -122.4324,
         address: `${address[0].name}, ${address[0].region}`,
       });
     })();
