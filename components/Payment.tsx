@@ -10,12 +10,7 @@ import { fetchAPI } from "@/lib/fetch";
 import { useLocationStore } from "@/store";
 import { PaymentProps } from "@/types/type";
 
-const Payment = ({
-  fullName,
-  email,
-  amount,
-  driverId,
-  rideTime,
+const Payment = ({fullName, email, amount, driverId, rideTime,
 }: PaymentProps) => {
   const { initPaymentSheet, presentPaymentSheet } = useStripe();
   const {
@@ -44,7 +39,7 @@ const Payment = ({
 
   const initializePaymentSheet = async () => {
     const { error } = await initPaymentSheet({
-      merchantDisplayName: "Example, Inc.",
+      merchantDisplayName: "Uber Ride, Inc.",
       intentConfiguration: {
         mode: {
           amount: parseInt(amount) * 100,
@@ -145,8 +140,7 @@ const Payment = ({
             placed. Please proceed with your trip.
           </Text>
 
-          <CustomButton
-            title="Back Home"
+          <CustomButton title="Back Home"
             onPress={() => {
               setSuccess(false);
               router.push("/(root)/(tabs)/home");

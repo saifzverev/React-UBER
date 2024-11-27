@@ -1,50 +1,46 @@
-# Welcome to your Expo app 👋
+Uber Clone: A Full-Stack React Native App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+I built a full-stack React Native application that replicates core features of the Uber, using React Native for handling the user interface, Google Maps for rendering maps with directions, stripe for handling payments, Postgres for managing databases, and styled with TailwindCSS.
 
-## Get started
 
-1. Install dependencies
+Tech Stacks Used:
+React Native
+Expo
+API: Google Maps and Stripe
+State Management: Zustand
+Styling: Tailwind CSS
+Navigation: Expo Router
+Payments: Stripe
+Database: PostgreSQL via Neon.tech
+Authentication: Clerk
 
-   ```bash
-   npm install
-   ```
+Features
+User Authentication: Secure user registration, login, and password reset.
+Profile Management: Users can view and edit their profile information.
+Requesting Rides: Users can request rides by specifying their pickup and drop-off locations.
+Driver Matching: The app matches riders with available drivers based on their location and preferences.
+Real-time Tracking: Users can track the progress of their ride on a map.
+Payment Processing: Secure payment processing using Stripe.
+Ride History: Users can view their past/recent ride history.
+Onboarding Flow: Seamless user registration and setup process.
+oAuth Using Google: Easy login using Google credentials.
+Home Screen with Live Location & Google Map: Real-time location tracking with markers on a map.
+Google Places Autocomplete: Search any place on Earth with autocomplete suggestions.
+Select Rides from Map: Choose available cars near your location from the map.
+Confirm Ride with Detailed Information: View complete ride details, including time and fare price.
+Pay for Ride Using Stripe: Make payments using multiple methods like cards and others.
+Create Rides After Successful Payment: Book a ride after confirming payment.
 
-2. Start the app
 
-   ```bash
-    npx expo start
-   ```
+Links used:-
 
-In the output, you'll find options to open the app in a
+https://www.nativewind.dev/quick-starts/expoTypeScript 
+https://www.nativewind.dev/v4/getting-started/typescript
+https://neon.tech/
+https://go.clerk.com/DtiSBEI
+https://clerk.com/docs/quickstarts/expo
+https://clerk.com/docs/custom-flows/oauth-connections
+https://www.geoapify.com/
+https://docs.stripe.com/payments/accept-a-payment?platform=react-native&ui=payment-sheet
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
